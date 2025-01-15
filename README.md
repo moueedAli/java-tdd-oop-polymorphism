@@ -13,12 +13,12 @@
 
 Polymorphism is the ability to use different classes in the same way. You were already using polymorphism in your previous *dependency injection with interfaces* exercise, now we'll take a closer look at what it really is.
 
-Here's a class that moves a car a certain number of meters:
+Here's a class that moves a car a certain number of metres:
 
 ```java
 class Mover {
-    public void move(Car car, int meters) {
-        car.accelerate(200);
+    public void move(Car car, int metres) {
+        car.accelerate(metres);
     }
 }
 ```
@@ -27,16 +27,16 @@ If we want to reuse this class for different means of travel, we'd probably have
 
 ```java
 class Mover {
-    public void move(Car car, int meters) {
-        car.accelerate(200);
+    public void move(Car car, int metres) {
+        car.accelerate(metres);
     }
     
-    public void move(Plane plane, int meters) {
-        plane.fly(200);
+    public void move(Plane plane, int metres) {
+        plane.fly(metres);
     }
     
-    public void move(Skateboard skateboard, int meters) {
-        skateboard.skate(200);
+    public void move(Skateboard skateboard, int metres) {
+        skateboard.skate(metres);
     }
 }
 ```
@@ -45,12 +45,12 @@ This code is not polymorphic. It's performing the same sort of logic on differen
 
 ```java
 interface Vehicle {
-    void move(int meters);
+    void move(int metres);
 }
 
 class Mover {
-    public void move(Vehicle vehicle, int meters) {
-        vehicle.move(meters);
+    public void move(Vehicle vehicle, int metres) {
+        vehicle.move(metres);
     }
 }
 ```
