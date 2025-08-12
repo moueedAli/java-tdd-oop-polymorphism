@@ -13,16 +13,16 @@ public class Basket {
     public int getTotal() {
         int total = 0;
 
-        for (Item i : this.items) {
-            total += i.getPrice();
+        for (Item it : this.items) {
+            total += it.getPrice();
         }
 
         return total;
     }
 
     public boolean isInBasket(String name) {
-        for (Item i : this.items) {
-            if (i.getName().equals(name)) {
+        for (Item it : this.items) {
+            if (it.getName().equals(name)) {
                 return true;
             }
         }
